@@ -6,10 +6,10 @@
     <session-factory>
         <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.cache.use_second_level_cache">false</property>
-        <property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
-        <property name="hibernate.connection.password">stin2014</property>
-        <property name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost:1433/PMX_NPTS_CI</property>
+        <property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>      
+        <property name="hibernate.connection.url">jdbc:jtds:sqlserver://10.5.45.83:1433/PMX_NPTS_CI</property>
         <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password">admin</property>
         <property name="hibernate.default_catalog">PMX_NPTS_CI</property>
         <property name="hibernate.default_schema">dbo</property>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
