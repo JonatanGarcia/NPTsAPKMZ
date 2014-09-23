@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="namePozo" class="java.lang.String"/>
+	<parameter name="intervencion" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Marco\\Documents\\NetBeansProjects\\TestIisop\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="listNpt" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="error" class="java.lang.String"/>
+	<parameter name="lastCon" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="124" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="554" height="76" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="4" y="3" width="308" height="69" forecolor="#F0F0F0" backcolor="#F0F0F0"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="85" width="358" height="38" forecolor="#CC0000"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{error}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="360" y="0" width="195" height="67"/>
+				<imageExpression class="java.lang.String"><![CDATA["report\\logo_pemex.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Transparent" x="8" y="25" width="77" height="25" backcolor="#F0F0F0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Intervencion:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="87" y="25" width="223" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{intervencion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="51" y="3" width="259" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{namePozo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="8" y="52" width="171" height="20" backcolor="#F0F0F0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Último Consecutivo Cargado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="8" y="3" width="41" height="20" backcolor="#F0F0F0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pozo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="52" width="131" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$P{lastCon}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="77" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Consecutivo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="75" y="1" width="61" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="135" y="1" width="80" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Profundidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="359" y="1" width="159" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Npt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="212" y="1" width="148" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Actividad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="518" y="1" width="36" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horas]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<subreport>
+				<reportElement x="1" y="0" width="553" height="20"/>
+				<dataSourceExpression><![CDATA[$P{listNpt}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["report/subreportNpts.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="30" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

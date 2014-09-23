@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Ruta para el archivo de qlikview</comment>
+	<entry key="RUTA">manual/Analisis Sistematico de Tiempos No Productivos PER-TER-RMA.qvw</entry>
+</properties>
